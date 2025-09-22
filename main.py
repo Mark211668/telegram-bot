@@ -154,4 +154,11 @@ def callback(call):
 
 
 print("✅ Бот запущен...")
-bot.polling()
+import time
+
+while True:
+    try:
+        bot.polling(none_stop=True)
+    except Exception as e:
+        print("⚠️ Ошибка polling:", e)
+        time.sleep(5)
